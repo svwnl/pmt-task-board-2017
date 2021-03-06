@@ -11,7 +11,7 @@ export default class List extends React.Component {
      * @param {array} arr the array providing items to check for in the haystack.
      * @return {boolean} true|false if haystack contains at least one item from arr.
      */
-    findOne (haystack, arr) {
+    findOne(haystack, arr) {
         return arr.some(function (v) {
             return haystack.indexOf(v) >= 0;
         });
@@ -44,25 +44,24 @@ export default class List extends React.Component {
 
             // Filter tickets
 
-            if('' != this.props.filterSprint && task.sprintId != '' && task.sprintId != 0 ){
+            if ('' != this.props.filterSprint && task.sprintId != '' && task.sprintId != 0) {
 
                 // If a sprint has been selected filter tickets on sprint,
                 // except for tickets not in a sprint
 
-                if(this.props.filterPreviousSprints){
+                if (this.props.filterPreviousSprints) {
 
                     // Filter out tickets in sprints after the selected sprint
 
-                    if (task.acceptance > activeSprintAcceptance){
+                    if (task.acceptance > activeSprintAcceptance) {
                         // Ticket in sprint after selected sprint
-                        return ;
+                        return;
                     }
-                }
-                else {
+                } else {
 
                     // filter out tickets in all other sprints
 
-                    if ( task.sprintId != this.props.filterSprint) {
+                    if (task.sprintId != this.props.filterSprint) {
                         // Ticket not in the selected sprint
                         return;
                     }
@@ -98,8 +97,7 @@ export default class List extends React.Component {
             if ('B' == task.type) {
                 // Bugs
                 countBugs++;
-            }
-            else {
+            } else {
                 // Tasks
                 countTasks++;
             }
@@ -128,7 +126,7 @@ export default class List extends React.Component {
             title = SprintClass.dateFormat(sprint.start) + " start | " + SprintClass.dateFormat(sprint.acceptance) + " acc | " + SprintClass.dateFormat(sprint.production) + " prod";
 
             // Show release date in the header of the production and acceptance list
-            if(this.props.category == 'production' || this.props.category == 'acceptance'){
+            if (this.props.category == 'production' || this.props.category == 'acceptance') {
                 date = this.props.category.indexOf('prod') === -1 ? sprint.acceptance : sprint.production;
                 date = SprintClass.dateFormat(date) + ' ';
             }

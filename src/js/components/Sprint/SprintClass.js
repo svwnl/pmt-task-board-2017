@@ -24,7 +24,7 @@ export default class SprintClass extends React.Component {
         var d = new Date(milliseconds);
         return d.getDate() + ' ' + months[d.getMonth()];
     }
-    
+
     static getColor(number) {
         'use strict';
         var colors = ['blue', 'green', 'pink', 'purple', 'red', 'teal', 'orange'];

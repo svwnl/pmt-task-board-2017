@@ -33,13 +33,13 @@ export default class Filter extends React.Component {
         );
     }
 
-    toggleMultipleSelect(){
+    toggleMultipleSelect() {
 
         // Select multiple team member or just one.
         var selectMultipleTeamMembers = this.state.selectMultipleTeamMembers ? false : true;
-        this.setState({selectMultipleTeamMembers: selectMultipleTeamMembers });
+        this.setState({selectMultipleTeamMembers: selectMultipleTeamMembers});
 
-        if(!selectMultipleTeamMembers){
+        if (!selectMultipleTeamMembers) {
             // Going from selecting multiple team members to one
             this.props.handleUserInput(
                 {
@@ -79,14 +79,13 @@ export default class Filter extends React.Component {
 
         var selectTeamMembers = '';
         var toggleSelectTeamMembersClassName = "";
-        if(this.state.selectMultipleTeamMembers) {
+        if (this.state.selectMultipleTeamMembers) {
             // Multi select
             toggleSelectTeamMembersClassName = "fa fa-user";
             selectTeamMembers = <SelectMultiple filterEmployee={this.props.filterEmployee}
                                                 handleUserInput={this.props.handleUserInput}
                                                 employeeOptions={employeeOptions}/>;
-        }
-        else {
+        } else {
             // Select
             toggleSelectTeamMembersClassName = "fa fa-user-plus";
             selectTeamMembers = <Select filterEmployee={this.props.filterEmployee}
@@ -99,31 +98,31 @@ export default class Filter extends React.Component {
                 <div className="row">
                     <div className="col-xs-6">
                         <div className="form-group">
-                        <label htmlFor="filterTextInput">Search</label>
-                        <input
-                            type="text"
-                            placeholder="..."
-                            value={this.props.filterText}
-                            ref="filterTextInput"
-                            onChange={this.handleChange.bind(this)}
-                            className="form-control"
-                            id="filterTextInput"
-                        />
-                    </div>
+                            <label htmlFor="filterTextInput">Search</label>
+                            <input
+                                type="text"
+                                placeholder="..."
+                                value={this.props.filterText}
+                                ref="filterTextInput"
+                                onChange={this.handleChange.bind(this)}
+                                className="form-control"
+                                id="filterTextInput"
+                            />
+                        </div>
                     </div>
                     <div className="col-xs-6">
                         <div className="form-group">
-                        <label htmlFor="filterProduct">Product</label>
-                        <select
-                            value={this.props.filterProduct}
-                            ref="filterProductInput"
-                            onChange={this.handleChange.bind(this)}
-                            className="form-control"
-                            id="filterProductInput">
-                            <option value="" label="Select"></option>
-                            {productOptions}
-                        </select>
-                    </div>
+                            <label htmlFor="filterProduct">Product</label>
+                            <select
+                                value={this.props.filterProduct}
+                                ref="filterProductInput"
+                                onChange={this.handleChange.bind(this)}
+                                className="form-control"
+                                id="filterProductInput">
+                                <option value="" label="Select"></option>
+                                {productOptions}
+                            </select>
+                        </div>
                     </div>
                 </div>
                 <div className="form-group">
@@ -139,7 +138,9 @@ export default class Filter extends React.Component {
                     </select>
                 </div>
                 <div className="form-group">
-                    <label htmlFor="Filters_employee">Team member <a title="Previous" onClick={this.toggleMultipleSelect.bind(this)}><i className={toggleSelectTeamMembersClassName}>&nbsp;</i></a></label>
+                    <label htmlFor="Filters_employee">Team member <a title="Previous"
+                                                                     onClick={this.toggleMultipleSelect.bind(this)}><i
+                        className={toggleSelectTeamMembersClassName}>&nbsp;</i></a></label>
                     {selectTeamMembers}
                 </div>
                 <div class="row">
@@ -154,7 +155,7 @@ export default class Filter extends React.Component {
                             </label>
                         </div>
                     </div>
-                    <div className="col-xs-6" style={{paddingLeft: + '0'}}>
+                    <div className="col-xs-6" style={{paddingLeft: +'0'}}>
                         <div className="checkbox">
                             <label title="Include open tickets from previous sprints in selected sprint">
                                 <input type="checkbox"

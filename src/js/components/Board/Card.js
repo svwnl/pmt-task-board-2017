@@ -6,8 +6,7 @@ export default class Card extends React.Component {
         if ('B' == this.props.task.type) {
             // Bug
             return "http://pmt.pti.nl/index.php/report/view/" + this.props.task.name;
-        }
-        else {
+        } else {
             // Task
             return "http://pmt.pti.nl/index.php/task/view/" + this.props.task.name;
         }
@@ -38,12 +37,12 @@ export default class Card extends React.Component {
         return '';
     }
 
-    getTarget(){
+    getTarget() {
         return this.props.task.type + this.props.task.name;
     }
 
-    getStatus(){
-        if(4 == this.props.task.status ){
+    getStatus() {
+        if (4 == this.props.task.status) {
             // On hold
             return <span className="list-card-status" title="On hold"> <i className="fa fa-lock"></i></span>
         }

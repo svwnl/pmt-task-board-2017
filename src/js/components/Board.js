@@ -8,10 +8,26 @@ export default class Board extends React.Component {
         // hence the extra step of pushing lists to ListWrapper.
 
         var columns = [
-            [{"category": "production", "title": "production", "toggle": true}, {"category": "ready for prod", "title": "ready for prod", "toggle": true}],
-            [{"category": "acceptance", "title": "acceptance", "toggle": true}, {"category": "ready for acc", "title": "ready for acc", "toggle": true}],
-            [{"category": "tester approved", "title": "tester approved", "toggle": true}, {"category": "test", "title": "test", "toggle": true}],
-            [{"category": "deploy to test", "title": "deploy to test", "toggle": true}, {"category": "development", "title": "development", "toggle": true}],
+            [{"category": "production", "title": "production", "toggle": true}, {
+                "category": "ready for prod",
+                "title": "ready for prod",
+                "toggle": true
+            }],
+            [{"category": "acceptance", "title": "acceptance", "toggle": true}, {
+                "category": "ready for acc",
+                "title": "ready for acc",
+                "toggle": true
+            }],
+            [{"category": "tester approved", "title": "tester approved", "toggle": true}, {
+                "category": "test",
+                "title": "test",
+                "toggle": true
+            }],
+            [{"category": "deploy to test", "title": "deploy to test", "toggle": true}, {
+                "category": "development",
+                "title": "development",
+                "toggle": true
+            }],
             [{"category": "backlog", "title": "backlog", "toggle": true}]
         ];
 
@@ -21,7 +37,7 @@ export default class Board extends React.Component {
 
             listWrappers.push(<ListWrapper
                 key={'ListWrapper' + i}
-                activeSprintId ={this.props.activeSprintId}
+                activeSprintId={this.props.activeSprintId}
                 filterBug={this.props.filterBug}
                 filterEmployee={this.props.filterEmployee}
                 filterPreviousSprints={this.props.filterPreviousSprints}

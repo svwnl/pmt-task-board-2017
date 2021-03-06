@@ -126,14 +126,12 @@ export default class Layout extends React.Component {
             // Get open and closed tasks in selected sprint and open tasks in previous sprints
             this.serverRequestTickets(this.state.filterSprint, 1);
 
-        }
-        else if ('' != this.state.filterSprint) {
+        } else if ('' != this.state.filterSprint) {
 
             // Get open and closed tasks in selected sprint
             this.serverRequestTickets(this.state.filterSprint);
 
-        }
-        else {
+        } else {
 
             // Get all open tasks in all sprints
             this.serverRequestTickets();
@@ -235,7 +233,6 @@ export default class Layout extends React.Component {
     }
 
 
-
     static getPmtStatusDetails(status) {
 
         // Return the status code description
@@ -272,7 +269,9 @@ export default class Layout extends React.Component {
 
         var employees = this.state.employees;
         var employeesFlat = [];
-        employees.forEach(function(e){employeesFlat.push(e.label)});
+        employees.forEach(function (e) {
+            employeesFlat.push(e.label)
+        });
 
         tasks.forEach(
             function (task) {
@@ -384,7 +383,7 @@ export default class Layout extends React.Component {
         // Set true to request new tickets
         var requestTickets = false;
 
-        if('filterBug' in input) {
+        if ('filterBug' in input) {
             if (true !== input.filterBug) {
                 // Checkbox
                 input.filterBug = false
@@ -392,41 +391,41 @@ export default class Layout extends React.Component {
             newState['filterBug'] = input.filterBug;
         }
 
-        if('filterEmployee' in input) {
+        if ('filterEmployee' in input) {
             //@TODO add check to see if employee is valid
             console.log('filterEmployee');
             // if ('' != filterEmployee && this.state.employees.indexOf(filterEmployee) === -1) {
             newState['filterEmployee'] = input.filterEmployee;
         }
 
-        if('filterPreviousSprints' in input){
+        if ('filterPreviousSprints' in input) {
             if (true !== input.filterPreviousSprints) {
                 // Checkbox
                 input.filterPreviousSprints = false
             }
 
-            if(this.state.filterPreviousSprints != input.filterPreviousSprints){
+            if (this.state.filterPreviousSprints != input.filterPreviousSprints) {
                 // Sprint selection changed, request new tickets
                 requestTickets = true;
                 newState['filterPreviousSprints'] = input.filterPreviousSprints;
             }
         }
 
-        if('filterProduct' in input) {
+        if ('filterProduct' in input) {
             if ('' == input.filterProduct || this.state.products.indexOf(input.filterProduct) > -1) {
                 // Product deselected or selected product found in products list
                 newState['filterProduct'] = input.filterProduct;
             }
         }
 
-        if('filterTaskOwner' in input) {
+        if ('filterTaskOwner' in input) {
             if ('' == input.filterTaskOwner || this.state.taskOwners.indexOf(input.filterTaskOwner) > -1) {
                 // Task owner deselected or selected task owner found in task owner list
                 newState['filterTaskOwner'] = input.filterTaskOwner;
             }
         }
 
-        if('filterText' in input) {
+        if ('filterText' in input) {
             // Search
             newState['filterText'] = input.filterText;
         }
@@ -440,11 +439,10 @@ export default class Layout extends React.Component {
 
     }
 
-    sortEmployees(a, b){
+    sortEmployees(a, b) {
         if (a.label === b.label) {
             return 0;
-        }
-        else {
+        } else {
             return (a.label < b.label) ? -1 : 1;
         }
     }
@@ -456,16 +454,13 @@ export default class Layout extends React.Component {
 
         if (a.acceptance === b.acceptance) {
             return 0;
-        }
-        else if ('' == a.acceptance) {
+        } else if ('' == a.acceptance) {
             // Not in a sprint. Sort to top of list
             return -1;
-        }
-        else if ('' == b.acceptance) {
+        } else if ('' == b.acceptance) {
             // Not in a sprint. Sort to top of list
             return 1;
-        }
-        else {
+        } else {
             // Sort sprint asc
             return (a.acceptance < b.acceptance) ? -1 : 1;
         }

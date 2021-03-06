@@ -6,7 +6,7 @@ import SprintTable from "./Menu/SprintTable";
 export default class Menu extends React.Component {
 
     render() {
-        
+
         var d = new Date(this.props.refreshed);
         var minutes = d.getMinutes();
         if (minutes < 10) {
@@ -16,7 +16,7 @@ export default class Menu extends React.Component {
 
         return (
             <div className="board-menu">
-                
+
                 <div id="board-menu-header"><span>Last update: {lastUpdate}</span><a
                     className="btn btn-link" onClick={this.props.tick.bind(this)} title="Refresh tasks"><i
                     className="fa fa-refresh"></i></a>
@@ -55,6 +55,6 @@ export default class Menu extends React.Component {
                 </div>
                 <div className="version">v.: {this.props.version}</div>
             </div>
-            );
+        );
     }
 }

@@ -51,8 +51,7 @@ export default class SprintTableRow extends React.Component {
                     className = SprintTableRow.glue(className, 'highlight');
                 }
             }
-        }
-        else {
+        } else {
 
             // No sprint selected, highlight all
             className = SprintTableRow.glue(className, 'highlight');
@@ -66,7 +65,8 @@ export default class SprintTableRow extends React.Component {
         return (
             <tr className={this.highlightTableRow()} onClick={this.handleClick.bind(this, this.props.sprint.id)}>
                 <td className="sprint-label text-left">
-                    <SprintTag sprintId={this.props.sprint.number} key={this.props.sprint.id} alignTag="left"/>{this.flagActiveSprint()}
+                    <SprintTag sprintId={this.props.sprint.number} key={this.props.sprint.id}
+                               alignTag="left"/>{this.flagActiveSprint()}
                 </td>
                 <td className="release-date">
                     <span>{SprintClass.dateFormat(this.props.sprint.start)}</span></td>

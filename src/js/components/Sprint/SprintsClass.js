@@ -51,7 +51,7 @@ export default class SprintsClass extends React.Component {
         });
 
         return editedSprints;
-        
+
     }
 
     setSprints(sprints) {
@@ -84,8 +84,8 @@ export default class SprintsClass extends React.Component {
         // Active not set, set it and return result
         return this.setActiveSprintId();
     }
-    
-    setActiveSprintId(){
+
+    setActiveSprintId() {
 
         var sprints = this.sprints;
         // id = string

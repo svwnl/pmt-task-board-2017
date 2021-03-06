@@ -10,6 +10,6 @@ const app = document.getElementById('surface');
  */
 
 ReactDOM.render(
-    <Layout url="../src/models/data.php" version="1.5.6" />,
+    <Layout url="../src/models/data.php" version="1.5.6"/>,
     app
 );

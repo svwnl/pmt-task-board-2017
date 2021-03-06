@@ -68,7 +68,7 @@ export default class SprintTable extends React.Component {
                                           filterSprint={this.props.filterSprint}
                                           handleUserClick={this.props.handleUserClick}
                                           sprint={sprint}
-                                          activeSprintAcceptance={activeSprintAcceptance} />);
+                                          activeSprintAcceptance={activeSprintAcceptance}/>);
             }
         }
 

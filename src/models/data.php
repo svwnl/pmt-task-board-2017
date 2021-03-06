@@ -40,11 +40,11 @@ try {
             }
 
         }
-        
+
         if (in_array($mode, array(MODE_BUGS, MODE_ALL))) {
             $bugs = getBugs($pdo);
         }
-        
+
         // lets make sure that we can also just get the bugs
         $data = array_merge($tasks, $bugs);
     }

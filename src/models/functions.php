@@ -75,7 +75,7 @@ function getTasksForSprint(PDO $pdo, $sprint)
             GROUP BY t.counter
             ORDER BY t.counter;');
     $stmt->bindParam(':sprint', $sprint);
-    
+
     if ($stmt->execute()) {
         return transformPDOResult($stmt, 'T');
     }

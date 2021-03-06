@@ -14,7 +14,7 @@ export default class ListWrapper extends React.Component {
 
             lists.push(<List
                 key={i}
-                activeSprintId ={this.props.activeSprintId}
+                activeSprintId={this.props.activeSprintId}
                 category={this.props.lists[i].category}
                 filterBug={this.props.filterBug}
                 filterEmployee={this.props.filterEmployee}
